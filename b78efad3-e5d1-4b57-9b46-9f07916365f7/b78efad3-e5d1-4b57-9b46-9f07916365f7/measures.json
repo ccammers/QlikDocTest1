@@ -1,0 +1,1073 @@
+{
+    "measures": [
+        {
+            "qInfo": {
+                "qId": "xSmurL",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Max Concurrent Users",
+                "qDef": "max(ActiveUsers)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Max Concurrent Users",
+                "description": "Count of max user concurrently accessing apps.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "xnQPPp",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Avg Session Duration",
+                "qDef": "time(avg([Session Duration])/1440)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Avg Session Duration",
+                "description": "Use duration number format.",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "zBJTNq",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Users per Hour",
+                "qDef": "count({<[Session Count]={1}>} DISTINCT UserId)/count({<[Session Count]={1}>} DISTINCT [Hour Timeline])",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Users per Hour",
+                "description": "Average number of users accessing apps per hour.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "zuXL",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Avg Session Duration",
+                "qDef": "Avg([Session Duration])/1440",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Avg Session Duration",
+                "description": "Average session duration, given in fraction of days. Use the \"Duration\" number format.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "12f5bc85-bde7-43f3-bb45-0d9dcdea8cc1",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Avg KB Transferred",
+                "qDef": "Num(Avg([Session KBytes Sent+Received]),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Avg KB Transferred",
+                "description": "Represents the average quantity of data sent and received for user sessions, given in KB.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "1ce8308e-1e0b-4b1e-8031-daa6eaba2224",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "KB Transferred",
+                "qDef": "Num(Sum([Session KBytes Sent+Received]),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "KB Transferred",
+                "description": "Represents the quantity of data sent and received during a user session, given in KB.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "39f68887-12a7-4315-83fe-f62a83377d84",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Cache Miss Rate",
+                "qDef": "num(1-Sum([Cache Hits])/Sum([Cache Lookups]),'#.0%')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Cache Miss Rate",
+                "description": "A measure of how many cache results have been cached.  A high miss rate means the cache is not being used effectively.Clearing the cache periodically will of course result in the miss rate rising (and then recovering).",
+                "tags": [
+                    "performance"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "42578b08-b2ca-4fed-92b8-3fb85c485017",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Avg Selections",
+                "qDef": "Num(Avg([Session Selections]),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Avg Selections",
+                "description": "Average number of selections made in user sessions.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "6dda1c4d-11f4-4382-be92-c8f8381f56ac",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Apps",
+                "qDef": "count(DISTINCT [Export App Name])",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0,
+                "baseColor": {}
+            },
+            "qMetaDef": {
+                "title": "Apps",
+                "description": "Printing/Exporting from Apps: Count of unique Apps from which app objects were printed/exported by users.",
+                "tags": [
+                    "printing"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "74501d19-300d-4a0e-a43a-9e8543588783",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Last Reload Failure",
+                "qDef": "timestamp(Max({<[Reload Failure]={1}>} [Reload Finish]))",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Last Reload Failure",
+                "description": "Time of the last Reload failure.",
+                "tags": [
+                    "reload",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "8528b128-fb24-4fff-95cb-8a39a0a8cba9",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Avg Export Duration",
+                "qDef": "time(avg([Export Duration])/1440)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Avg Export Duration",
+                "description": "Average length of time to complete an export of an app object. In other words, how much time passed between the moment a user clicked \"Export object to PDF\" and the resulting pdf was saved.\nUse the interval number format.",
+                "tags": [
+                    "printing"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "8c27b0d2-db9e-4f1f-8d75-0f489b194442",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Last Reload Success",
+                "qDef": "timestamp(Max({<[Reload Failure]-={1}>} [Reload Finish]))",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Last Reload Success",
+                "description": "Time of the last Reload success.",
+                "tags": [
+                    "reload",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "DRELy",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Max Active Doc Sessions",
+                "qDef": "Num(max(ActiveDocSessions),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Max Active Doc Sessions",
+                "description": "",
+                "tags": [
+                    "performance"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "Dvjgs",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Reloads per Hour",
+                "qDef": "sum(TaskExecution)/count({<TaskExecution={1}>} distinct [Hour Timeline])",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Reloads per Hour",
+                "description": "Task reloads per hour.",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "GPmAZ",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Reloads",
+                "qDef": "Sum(TaskExecution)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Reloads",
+                "description": "Count of task reloads initiated in the QMC.",
+                "tags": [
+                    "reload",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "HQGmHG",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "CPU Above 95%",
+                "qDef": "num(count({<CPULoad={\">=0.95\"} > } [CPULoad])/count([CPULoad]),'#0%')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "CPU Above 95%",
+                "description": "Percentage of time the Qlik Sense process CPU exceeds 95%.",
+                "tags": [
+                    "performance"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "HSsUR",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Exports",
+                "qDef": "Sum([Export Count])",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Exports",
+                "description": "Count of app object exports (for example \"Export chart to PDF\").",
+                "tags": [
+                    "printing"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "KcrdHLY",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Apps",
+                "qDef": "num(count({<[Session Count]={1}>} DISTINCT [App Name]),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Apps",
+                "description": "SESSION Apps: Count of unique Apps accessed by users.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "LbWybdp",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Export Errors",
+                "qDef": "sum({<[Service Log]={'Printing'},[Service Error]={1}>} [Export Count])",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Export Errors",
+                "description": "Errors encountered when attempting to export an app object, for example \"Export story to Pptx\".",
+                "tags": [
+                    "printing"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "LjSzQ",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Apps Accessed per Day",
+                "qDef": "avg(aggr(count({<[Session Count]={1}>} DISTINCT [App Name]),Date))",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Apps Accessed per Day",
+                "description": "Average number of unique apps opened per day.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "MJCZjb",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Concurrent Users",
+                "qDef": "Max(ActiveUsers)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Concurrent Users",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "MnReYv",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Session Duration",
+                "qDef": "Sum([Session Duration])/1440",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Session Duration",
+                "description": "Duration of a  user-app session.\nUse the interval number format.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "NHhZjJW",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Reload Failures",
+                "qDef": "sum([Reload Failure])",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Reload Failures",
+                "description": "",
+                "tags": [
+                    "reload",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "QuVFdzZ",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Max CPU",
+                "qDef": "Max(CPULoad)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Max CPU",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "SsympV",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Reload Duration σ",
+                "qDef": "Interval(Stdev([Reload Duration])/1440)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Reload Duration σ",
+                "description": "The standard deviation (σ) of reload duration.",
+                "tags": [
+                    "reload",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "UFKxLg",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Cache Bytes Added",
+                "qDef": "Sum([Cache Bytes Added])",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Cache Bytes Added",
+                "description": "This is the total in-memory size of the result and data added to the cache during the period. This measures how the volume of new results, and can be used to judge if increased memory consumption is caused by request or by traffic e.g. When the memory is saturated (70—90% default), a corresponding volume of results are dropped from the cache.",
+                "tags": [
+                    "performance"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "UkJZbun",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Max RAM (GB)",
+                "qDef": "Max(VMCommitted)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Max RAM (GB)",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "VJpTtq",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Total Reloads",
+                "qDef": "Sum(TaskExecution)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Total Reloads",
+                "description": "",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "WznHUF",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Errors & Warnings",
+                "qDef": "count({<LogTimeStamp= {\">=$(=now()-1)\"}> }  Severity)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Errors & Warnings",
+                "description": "24 Hours: Errors and Warnings generated in prior 24 hours (based on selections).",
+                "tags": [
+                    "24-hour"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "YNzsSUF",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Cache Hits",
+                "qDef": "Sum([Cache Hits])",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Cache Hits",
+                "description": "Cache hits is the number of lookups of results or sub-results in the Engine’s result and data cache that was hit (found), and thus re-used without needing calculation. Not all stages of a given task uses the cache and usually needs some additional processing before the result is complete, so even Cache hits result in some load on the machine.",
+                "tags": [
+                    "performance"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "cba193c1-5e68-4f84-8f6b-b5754cb12499",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "CPU Spent (ms)",
+                "qDef": "Num(Sum([Session CPU Spent (ms)]),'#,##0.00')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "CPU Spent (ms)",
+                "description": "Count of CPU spent during user sessions, given in milliseconds (ms).",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "bb81cbc0-2f68-409f-bdff-b3ccad3ac72d",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Max KB Transferred",
+                "qDef": "Num(Max([Session KBytes Sent+Received]),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Max KB Transferred",
+                "description": "Represents the max quantity of data sent and received during a user session, given in KB.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "bc4e562b-8f46-4faf-bfe8-b2631dc1c74d",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Export Duration",
+                "qDef": "Sum([Export Duration])/1440",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Export Duration",
+                "description": "Duration of  export of app object. In other words, how much time passed between the time a user clicked \"Export object to PDF\" and the resulting pdf was saved.\nUse the interval number format.",
+                "tags": [
+                    "printing"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "bjFZgb",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "QMC Changes",
+                "qDef": "Sum(qmc_change)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "QMC Changes",
+                "description": "Count of changes made in the QMC.",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "c8d1ca0b-8d3e-42a9-a87a-d7551b21ab20",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Users",
+                "qDef": "count({<[Export Count]={1}>} DISTINCT UserId)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Users",
+                "description": "Export & Print Users: Count of unique users who exported an app object from a Sense app.",
+                "tags": [
+                    "printing"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "cMDy",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Last Reload",
+                "qDef": "timestamp(Max([Reload Finish]))",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Last Reload",
+                "description": "Time of the last Reload execution.",
+                "tags": [
+                    "reload",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "cPjqG",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Sessions",
+                "qDef": "Num(Sum([Session Count]),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Sessions",
+                "description": "",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "cRtMJ",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Concurrent Apps",
+                "qDef": "Max(ActiveDocs)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Concurrent Apps",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "da6015e4-3d61-4ce8-bedc-45e5735a25e0",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Max CPU Spent (ms)",
+                "qDef": "Num(Max([Session CPU Spent (ms)]),'#,##0.00')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Max CPU Spent (ms)",
+                "description": "Max count of CPU spent for a user session, given in milliseconds (ms).",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "eb164877-c842-48ec-9870-45abcabeab41",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Avg CPU Spent (ms)",
+                "qDef": "Num(Avg([Session CPU Spent (ms)]),'#,##0.00')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Avg CPU Spent (ms)",
+                "description": "Average count of CPU spent across user sessions, given in milliseconds (ms).",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "f0ca4ac3-6c6d-4683-9668-1576c76e6f55",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Reload Failures",
+                "qDef": "num(Sum({<LogTimeStamp= {\">=$(=now()-1)\"}>}  [Reload Failure]),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Reload Failures",
+                "description": "24 Hours: Count of Task Reloads during last 24 hours.",
+                "tags": [
+                    "24-hour",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "hzqjsL",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Cache Hit Rate",
+                "qDef": "Num(Sum([Cache Hits])/Sum([Cache Lookups]),'#.0%')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Cache Hit Rate",
+                "description": "Percent of Cache Lookups resulting in a successful Hit (find). A measure of how many cache results have been cached.  A high hit rate means the cache is being used effectively. Under most circumstances this is to be expected. Clearing the cache periodically will of course result in the hit rate dropping (and then recovering).",
+                "tags": [
+                    "performance"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "jEEJc",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Reloads",
+                "qDef": "Num(Sum({<LogTimeStamp= {\">=$(=now()-1)\"}>} TaskExecution),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Reloads",
+                "description": "24 Hours: Count of Task Reloads during last 24 hours.",
+                "tags": [
+                    "24-hour",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "vytJfm",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Selections",
+                "qDef": "Num(Sum([Session Selections]),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Selections",
+                "description": "Count of selections made in user session.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "jgbdje",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Avg Reload Duration",
+                "qDef": "time(avg([Reload Duration])/1440)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Avg Reload Duration",
+                "description": "User Duration number format.",
+                "tags": [
+                    "reload",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "jpUaLj",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Reloads per Day",
+                "qDef": "sum(TaskExecution)/count({<TaskExecution={1}>} distinct Date)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Reloads per Day",
+                "description": "Count of task reload execution per day.",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "mAZSNX",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Apps per Hour",
+                "qDef": "avg(aggr(count({<[Session Count]={1}>} DISTINCT [App Name]),[Hour Timeline]))",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Apps per Hour",
+                "description": "Average number of apps opened and accessed per hour.",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "ngEbpx",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Errors & Warnings",
+                "qDef": "count(Severity)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Errors & Warnings",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "nkKFGL",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Max Concurrent Apps",
+                "qDef": "max(ActiveDocs)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Max Concurrent Apps",
+                "description": "Maximum number of apps open concurrently.",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "npyDbvS",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Users per Day",
+                "qDef": "count({<[Session Count]={1}>} DISTINCT UserId)/count({<[Session Count]={1}>} DISTINCT Date)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Users per Day",
+                "description": "Average count of users accessing apps per day.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "pBhFJG",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Users",
+                "qDef": "num(count({<[Session Count]={1}>} DISTINCT UserId),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Users",
+                "description": "SESSION Users: Count of unique users who accessed a Sense app.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "pmKUZkd",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Max Reload Duration",
+                "qDef": "Interval(Max([Reload Duration])/1440)",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Max Reload Duration",
+                "description": "",
+                "tags": [
+                    "reload",
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "rfjwE",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Days Since Last Session",
+                "qDef": "interval(today(2)-daystart(max({<[Session Count] = {1}>} LogTimeStamp)),'d')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Days Since Last Session",
+                "description": "Number of days since the last session with the app.",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "vHwcscY",
+                "qType": "measure"
+            },
+            "qMeasure": {
+                "qLabel": "Log Entries",
+                "qDef": "Num(Count(Id),'#,##0')",
+                "qGrouping": "N",
+                "qExpressions": [],
+                "qActiveExpression": 0
+            },
+            "qMetaDef": {
+                "title": "Log Entries",
+                "description": "",
+                "tags": []
+            }
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "properties": {
+        "qTitle": "Operations Monitor",
+        "qLastReloadTime": "2018-07-12T20:06:49.176Z",
+        "qMigrationHash": "98d482c3f964dccf69cbfb9a00e0c048ea6eb221",
+        "qSavedInProductVersion": "12.170.2",
+        "qThumbnail": {
+            "qUrl": "/appcontent/b78efad3-e5d1-4b57-9b46-9f07916365f7/Qlik_Images/Operations_Monitor_Thumbnail.png"
+        },
+        "createdDate": "2018-07-11T14:01:21.984Z",
+        "modifiedDate": "2018-07-12T20:06:50.304Z",
+        "published": true,
+        "publishTime": "2018-07-11T14:01:30.392Z",
+        "privileges": [
+            "read",
+            "update",
+            "delete",
+            "publish",
+            "exportdata",
+            "offlineaccess",
+            "duplicate"
+        ],
+        "description": "The Operations Monitor 7.10 provides information about the Qlik Sense server environment, including: server memory and CPU usage, active users, task reloads, and errors and warnings. Enjoy!",
+        "dynamicColor": "",
+        "create": [
+            {
+                "resource": "sheet",
+                "canCreate": true
+            },
+            {
+                "resource": "bookmark",
+                "canCreate": true
+            },
+            {
+                "resource": "story",
+                "canCreate": true
+            },
+            {
+                "resource": "dimension",
+                "canCreate": true
+            },
+            {
+                "resource": "measure",
+                "canCreate": true
+            },
+            {
+                "resource": "masterobject",
+                "canCreate": true
+            },
+            {
+                "resource": "folderconnection",
+                "canCreate": true
+            },
+            {
+                "resource": "oledbconnection",
+                "canCreate": true
+            },
+            {
+                "resource": "odbcconnection",
+                "canCreate": true
+            },
+            {
+                "resource": "internetconnection",
+                "canCreate": true
+            },
+            {
+                "resource": "customconnection",
+                "canCreate": true
+            }
+        ],
+        "stream": {
+            "id": "a70ca8a5-1d59-4cc9-b5fa-6e207978dcaf",
+            "name": "Monitoring apps"
+        },
+        "canCreateDataConnections": true
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "appprops": [
+        {
+            "qProperty": {
+                "qInfo": {
+                    "qId": "LfnyKS",
+                    "qType": "appprops"
+                },
+                "qMetaDef": {},
+                "sheetTitleBgColor": "",
+                "sheetTitleGradientColor": "",
+                "sheetTitleColor": "",
+                "sheetLogoThumbnail": {
+                    "qStaticContentUrlDef": {
+                        "qUrl": "/appcontent/b78efad3-e5d1-4b57-9b46-9f07916365f7/QlikLogo-RGB.jpg"
+                    }
+                },
+                "sheetLogoPosition": "",
+                "rtl": false,
+                "theme": "card"
+            },
+            "qChildren": []
+        }
+    ]
+}

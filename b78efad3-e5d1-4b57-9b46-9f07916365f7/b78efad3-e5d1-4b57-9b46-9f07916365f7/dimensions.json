@@ -1,0 +1,899 @@
+{
+    "dimensions": [
+        {
+            "qInfo": {
+                "qId": "08c0890d-6b3b-4b8f-afec-6a9269301751",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Export App Name"
+                ],
+                "qFieldLabels": [
+                    "App"
+                ],
+                "title": "App"
+            },
+            "qMetaDef": {
+                "title": "App",
+                "description": "Name of App from which an object was exported. For example: \"Export chart to PDF\".",
+                "tags": [
+                    "printing"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "0f9df1a7-4d81-48af-99ab-82273802efa2",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Session Duration"
+                ],
+                "qFieldLabels": [
+                    "Session Duration"
+                ],
+                "title": "Session Duration"
+            },
+            "qMetaDef": {
+                "title": "Session Duration",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "15e7156d-15d7-47bb-8f86-d5f6d113e7f6",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "ObjectName"
+                ],
+                "qFieldLabels": [
+                    "ObjectName"
+                ],
+                "title": "ObjectName"
+            },
+            "qMetaDef": {
+                "title": "ObjectName",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "2639e123-081d-4df0-988f-e88c83d26059",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "=[Reload Status]"
+                ],
+                "qFieldLabels": [
+                    "Reload Status"
+                ],
+                "title": "Reload Status"
+            },
+            "qMetaDef": {
+                "title": "Reload Status",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "2c02c8c6-c0f1-4132-8209-ee0145ab9bd8",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Description"
+                ],
+                "qFieldLabels": [
+                    "Description"
+                ],
+                "title": "Description"
+            },
+            "qMetaDef": {
+                "title": "Description",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "35d25eb4-8f24-4fdc-845e-85e2985b4d00",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Message"
+                ],
+                "qFieldLabels": [
+                    "Message"
+                ],
+                "title": "Message"
+            },
+            "qMetaDef": {
+                "title": "Message",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "38b40741-123a-4513-99f2-4cab2af5651f",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "=[Reload Duration Bucket]"
+                ],
+                "qFieldLabels": [
+                    "Reload Duration Bucket"
+                ],
+                "title": "Reload Duration Bucket"
+            },
+            "qMetaDef": {
+                "title": "Reload Duration Bucket",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "48cb36d4-e52e-4414-b3a7-8c26c3c6de5d",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "One-Minute Timeline"
+                ],
+                "qFieldLabels": [
+                    "One-Minute Timeline"
+                ],
+                "title": "One-Minute Timeline"
+            },
+            "qMetaDef": {
+                "title": "One-Minute Timeline",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "517d8d3b-6ddf-4496-a285-6c066b7eecd9",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Date"
+                ],
+                "qFieldLabels": [
+                    "Date"
+                ],
+                "title": "Date"
+            },
+            "qMetaDef": {
+                "title": "Date",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "5db087a6-72d1-4fb9-b61c-fe0e3ab66ba4",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Task Name"
+                ],
+                "qFieldLabels": [
+                    "Task Name"
+                ],
+                "title": "Task Name"
+            },
+            "qMetaDef": {
+                "title": "Task Name",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "64ab88d5-feab-426a-a814-5b9886f65038",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Command"
+                ],
+                "qFieldLabels": [
+                    "Command"
+                ],
+                "title": "Command"
+            },
+            "qMetaDef": {
+                "title": "Command",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "BjEAQk",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "H",
+                "qFieldDefs": [
+                    "Week",
+                    "Date"
+                ],
+                "qFieldLabels": [],
+                "title": "Week>Date Drill"
+            },
+            "qMetaDef": {
+                "title": "Week>Date Drill",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "83dd9f0b-06b8-491b-842f-3ba13a3dbbf8",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Exported Object"
+                ],
+                "qFieldLabels": [
+                    "Exported Object"
+                ],
+                "title": "Exported Object"
+            },
+            "qMetaDef": {
+                "title": "Exported Object",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "BSX",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Ten-Minute Timeline"
+                ],
+                "qFieldLabels": [
+                    "Ten-Minute Timeline"
+                ],
+                "title": "Ten-Minute Timeline"
+            },
+            "qMetaDef": {
+                "title": "Ten-Minute Timeline",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "DXqMQM",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "App Name"
+                ],
+                "qFieldLabels": [
+                    "App"
+                ],
+                "title": "App"
+            },
+            "qMetaDef": {
+                "title": "App",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "DsqKb",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "=if(TaskExecution=1,ObjectName)"
+                ],
+                "qFieldLabels": [
+                    "App"
+                ],
+                "title": "App"
+            },
+            "qMetaDef": {
+                "title": "App",
+                "description": "Reload Task App name.",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "FRfdm",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "=if([Session Count]=1,ObjectName)"
+                ],
+                "qFieldLabels": [
+                    "App"
+                ],
+                "title": "App"
+            },
+            "qMetaDef": {
+                "title": "App",
+                "description": "App name for user-accessed app.",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "HTYvxgw",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Exported Object Type"
+                ],
+                "qFieldLabels": [
+                    "Exported Object Type"
+                ],
+                "title": "Exported Object Type"
+            },
+            "qMetaDef": {
+                "title": "Exported Object Type",
+                "description": "",
+                "tags": [
+                    "printing"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "JujyY",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "H",
+                "qFieldDefs": [
+                    "Hostname",
+                    "Service",
+                    "Context",
+                    "Command",
+                    "ObjectId",
+                    "ObjectName",
+                    "UserId"
+                ],
+                "qFieldLabels": [],
+                "title": "Logging Drill"
+            },
+            "qMetaDef": {
+                "title": "Logging Drill",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "KMZTQjk",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "ProxyPackageId"
+                ],
+                "qFieldLabels": [
+                    "Proxy Package ID"
+                ],
+                "title": "Proxy Package ID"
+            },
+            "qMetaDef": {
+                "title": "Proxy Package ID",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "LsaweH",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "User Role"
+                ],
+                "qFieldLabels": [
+                    "User Role"
+                ],
+                "title": "User Role"
+            },
+            "qMetaDef": {
+                "title": "User Role",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "MbHZpH",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Hostname"
+                ],
+                "qFieldLabels": [
+                    "Hostname"
+                ],
+                "title": "Hostname"
+            },
+            "qMetaDef": {
+                "title": "Hostname",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "NDprC",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "H",
+                "qFieldDefs": [
+                    "Week",
+                    "Hour Timeline",
+                    "Ten-Minute Timeline"
+                ],
+                "qFieldLabels": [],
+                "title": "Timeline Drill"
+            },
+            "qMetaDef": {
+                "title": "Timeline Drill",
+                "description": "Week>Hour>Five-Minute",
+                "tags": [
+                    "datetime"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "NmAJEL",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "H",
+                "qFieldDefs": [
+                    "Month",
+                    "Date",
+                    "Hour"
+                ],
+                "qFieldLabels": [],
+                "title": "Time Drill"
+            },
+            "qMetaDef": {
+                "title": "Time Drill",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "PzSvad",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "AppId"
+                ],
+                "qFieldLabels": [
+                    "AppId"
+                ],
+                "title": "AppId"
+            },
+            "qMetaDef": {
+                "title": "AppId",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "RmPwCJr",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "User Directory"
+                ],
+                "qFieldLabels": [
+                    "User Directory"
+                ],
+                "title": "User Directory"
+            },
+            "qMetaDef": {
+                "title": "User Directory",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "RzLH",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Weekday"
+                ],
+                "qFieldLabels": [
+                    "Weekday"
+                ],
+                "title": "Weekday"
+            },
+            "qMetaDef": {
+                "title": "Weekday",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "TGRWnD",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "ProxySessionId"
+                ],
+                "qFieldLabels": [
+                    "Proxy Session ID"
+                ],
+                "title": "Proxy Session ID"
+            },
+            "qMetaDef": {
+                "title": "Proxy Session ID",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "TdkSd",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Hour"
+                ],
+                "qFieldLabels": [
+                    "Hour"
+                ],
+                "title": "Hour"
+            },
+            "qMetaDef": {
+                "title": "Hour",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "VWMvma",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "QMC Resource Type"
+                ],
+                "qFieldLabels": [
+                    "QMC Resource Type"
+                ],
+                "title": "QMC Resource Type"
+            },
+            "qMetaDef": {
+                "title": "QMC Resource Type",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "ZYrBmux",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "=Timeframe"
+                ],
+                "qFieldLabels": [
+                    "Timeframe"
+                ],
+                "title": "Timeframe"
+            },
+            "qMetaDef": {
+                "title": "Timeframe",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "ZmHtQp",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "H",
+                "qFieldDefs": [
+                    "Month",
+                    "Date",
+                    "Hour Timeline"
+                ],
+                "qFieldLabels": [],
+                "title": "Month>Date>Hour Drill"
+            },
+            "qMetaDef": {
+                "title": "Month>Date>Hour Drill",
+                "description": "",
+                "tags": [
+                    "time"
+                ]
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "afc42dfc-6800-44cd-b8f3-3d4bdc452a96",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Context"
+                ],
+                "qFieldLabels": [
+                    "Context"
+                ],
+                "title": "Context"
+            },
+            "qMetaDef": {
+                "title": "Context",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "cdcbede8-3dba-4927-b497-76109da409d7",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "UserId"
+                ],
+                "qFieldLabels": [
+                    "User ID"
+                ],
+                "title": "User ID"
+            },
+            "qMetaDef": {
+                "title": "User ID",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "d27d000e-be2a-4af0-a167-97d4765e36ed",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Month"
+                ],
+                "qFieldLabels": [
+                    "Month"
+                ],
+                "title": "Month"
+            },
+            "qMetaDef": {
+                "title": "Month",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "dXSJbP",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "User Name"
+                ],
+                "qFieldLabels": [
+                    "User Name"
+                ],
+                "title": "User Name"
+            },
+            "qMetaDef": {
+                "title": "User Name",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "e0ce5650-89af-41dc-94da-6bebb9ad38b7",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Hour Timeline"
+                ],
+                "qFieldLabels": [
+                    "Hour Timeline"
+                ],
+                "title": "Hour Timeline"
+            },
+            "qMetaDef": {
+                "title": "Hour Timeline",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "kygyjd",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Severity"
+                ],
+                "qFieldLabels": [
+                    "Severity"
+                ],
+                "title": "Severity"
+            },
+            "qMetaDef": {
+                "title": "Severity",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "mQfsZ",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "H",
+                "qFieldDefs": [
+                    "Hour",
+                    "Time"
+                ],
+                "qFieldLabels": [],
+                "title": "Hour > Time Drill"
+            },
+            "qMetaDef": {
+                "title": "Hour > Time Drill",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "prwbjP",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "Export Duration"
+                ],
+                "qFieldLabels": [
+                    "Export Duration"
+                ],
+                "title": "Export Duration"
+            },
+            "qMetaDef": {
+                "title": "Export Duration",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "vJTPpv",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "N",
+                "qFieldDefs": [
+                    "=Service"
+                ],
+                "qFieldLabels": [
+                    "Service"
+                ],
+                "title": "Service"
+            },
+            "qMetaDef": {
+                "title": "Service",
+                "description": "",
+                "tags": []
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "vWLfrCp",
+                "qType": "dimension"
+            },
+            "qDim": {
+                "qGrouping": "H",
+                "qFieldDefs": [
+                    "Month",
+                    "Date"
+                ],
+                "qFieldLabels": [],
+                "title": "Month>Date Drill"
+            },
+            "qMetaDef": {
+                "title": "Month>Date Drill",
+                "description": "Time Drill dimension for Session and Task Timelines",
+                "tags": []
+            }
+        }
+    ]
+}

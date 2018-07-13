@@ -1,0 +1,2160 @@
+{
+    "variables": [
+        {
+            "qInfo": {
+                "qId": "2c644351-c86b-463e-97bb-9632855bc63a",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "tempErrorDetails",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "f6d51111-5dbb-4276-b863-78112fd2e231",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsAuditActivityRepository",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "ProxySessionId&ProxyPackageId as _proxySessionPackage,\r\n  \t\t\t\t\t\t\t\t\t\tIf(Command='Open app:LoadObjects',0) as [Session Count],'0.0000'& rowno() as Sequence#,applymap('qmc_change_map',subfield(Command,' ',1),null()) as qmc_change,IF(applymap('qmc_change_map',subfield(Command,' ',1),null())=1\r\n                                        \tand substringcount(Command,':')=0,\r\n        \t\t\t\t\t\t\t\t\tIF(left(UserId,3)<>'sa_' and UserId <> 'Not available' and UserId <> 'System',\r\n                                               upper(left(mid(Command,Index(Command,' ')+1),1))&mid(mid(Command,Index(Command,' ')+1),2) \r\n                                               \t)) as [QMC Resource Type],UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "eff6ff40-6c30-42ca-887d-a76682da6fea",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "svr",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ServerLogFolder/"
+        },
+        {
+            "qInfo": {
+                "qId": "0150dbc7-1014-49f2-85e8-d8b2409cb186",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRows_qrs_appobject",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "1413"
+        },
+        {
+            "qInfo": {
+                "qId": "0d95f9cb-9a48-457d-87f9-53056865ccbb",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRows_qrs_app",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "14"
+        },
+        {
+            "qInfo": {
+                "qId": "43f8dfaa-1762-4ed4-bea1-40fc545fcd74",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRows_qrs_user",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "14"
+        },
+        {
+            "qInfo": {
+                "qId": "b54a0822-30d0-45d1-b84d-4264116c9163",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "logName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "5dcede84-a7aa-4992-998f-d1b424686d09",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "count_of_nodes",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0"
+        },
+        {
+            "qInfo": {
+                "qId": "4a61b477-5fcc-4c02-af6b-36bc446602d1",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "multiNode",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Single-Node"
+        },
+        {
+            "qInfo": {
+                "qId": "1b326435-8e2e-439f-b32e-95d2d2b66f30",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "i",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "1"
+        },
+        {
+            "qInfo": {
+                "qId": "9ccb5634-163c-4a77-906b-7546027edd78",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "j",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "16"
+        },
+        {
+            "qInfo": {
+                "qId": "5718b88b-492f-4817-888f-13c5bf154e3b",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRows_qrs_task",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "21"
+        },
+        {
+            "qInfo": {
+                "qId": "196bbd16-ef3b-468b-a57a-179997e8bd0f",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "extension",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "txt"
+        },
+        {
+            "qInfo": {
+                "qId": "0624d473-b86b-4445-b1c2-93b31e445cfa",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "commonFields",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "d3d955fa-fe52-448d-b59e-fb30003151f6",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "qmcChangeFields",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "applymap('qmc_change_map',subfield(Command,' ',1),null()) as qmc_change,IF(applymap('qmc_change_map',subfield(Command,' ',1),null())=1\r\n                                        \tand substringcount(Command,':')=0,\r\n        \t\t\t\t\t\t\t\t\tIF(left(UserId,3)<>'sa_' and UserId <> 'Not available' and UserId <> 'System',\r\n                                               upper(left(mid(Command,Index(Command,' ')+1),1))&mid(mid(Command,Index(Command,' ')+1),2) \r\n                                               \t)) as [QMC Resource Type],"
+        },
+        {
+            "qInfo": {
+                "qId": "8633e043-6b33-46ac-9d31-82148f9f7391",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsRepositorySynchronization",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "'Synchronization' as Command,\r\n  \t\t\t\t\t\t\t\t\t\tsubfield(Logger,'.',-1) as Description,\r\n                                        '0' as ProxySessionId,\r\n  \t\t\t\t\t\t\t\t\t\tId as _proxySessionPackage,\r\n                                        'Repository' as Service,\r\n                                        Level as Severity,\r\n                                        lower(Hostname) as Hostname\r\n  \t\t\t\t\t\t\t\t\t\t"
+        },
+        {
+            "qInfo": {
+                "qId": "19a90de6-b788-4f98-aa93-2069c32d705c",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsAuditActivityPrinting",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "RequestSequenceId as _proxySessionPackage,\r\n  \t\t\t\t\t\t\t\t\t\tIndex(Command,'Export') as [Export Count],\r\n                                        Index(Command,'Store') as [Export Store Count],UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "1d87b0b3-e04b-4a0d-b4d7-323597d48da8",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsAuditActivityEngine",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "ProxySessionId&ProxyPackageId as _proxySessionPackage,\r\n  \t\t\t\t\t\t\t\t\t\t\tIf(Context='Doc::DoReload',1) as [Reload from Hub],\r\n                                        \tIf(Context='Doc::DoReload',1) as TaskExecution,\r\n                                            If(Context='Doc::DoReload',ProxySessionId&ProxyPackageId&RequestSequenceId) as TaskId,UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "fbc0e2f5-4120-4301-a772-926e1d2bb7ec",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsAuditActivityScheduler",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "ProxySessionId&ProxyPackageId as _proxySessionPackage,\r\n  \t\t\t\t\t\t\t\t\t\tIf(Message='Changing task state to Triggered',0,\r\n  \t\t\t\t\t\t\t\t\t\t\t\tIF(Message like 'Task finished*',1,\r\n                                                \tIF(Result <> 30 AND Result>=20 AND Result <45,1))) as TaskExecution,\r\n                                         subfield(ObjectId,'|',1) as TaskId,UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "8dfd6321-e267-4348-89dc-2811eb565756",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "folder",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "16ab6241-7559-4812-b93b-57b8008f966c",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fldr",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ArchivedLogsFolder/usbos-twa.qliktech.com"
+        },
+        {
+            "qInfo": {
+                "qId": "6b8ca025-beb7-4edd-8670-4ccf3c2df4c4",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "carpeta",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ServerLogFolder/"
+        },
+        {
+            "qInfo": {
+                "qId": "6dd10768-f1c1-4cf5-ae81-e1c97e38f28b",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "logService",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Repository"
+        },
+        {
+            "qInfo": {
+                "qId": "1494c8c9-45d9-4027-95ee-7672e1580e88",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "logType",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Synchronization"
+        },
+        {
+            "qInfo": {
+                "qId": "f80cdd5b-c564-4f89-967a-afa124aa8dfb",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "logAddlFields",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "fieldsRepositorySynchronization"
+        },
+        {
+            "qInfo": {
+                "qId": "b0e1b758-7d73-4987-88eb-19dd7a35ea67",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "textFile",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "bfce9ac1-3577-4802-ba5d-ac266ff6e0e9",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "file_time",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "42486.286296296"
+        },
+        {
+            "qInfo": {
+                "qId": "f58e3d0c-33c4-4a8a-87f4-1307bbb8cbc7",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "logStartTS",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "TimeStamp(ConvertToLocalTime(Round(\"Timestamp\",1/1440)))"
+        },
+        {
+            "qInfo": {
+                "qId": "fa885858-0bd2-4343-ab56-23b65fa3e25e",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fields2Load",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "'Synchronization' as Command,\r\n  \t\t\t\t\t\t\t\t\t\tsubfield(Logger,'.',-1) as Description,\r\n                                        '0' as ProxySessionId,\r\n  \t\t\t\t\t\t\t\t\t\tId as _proxySessionPackage,\r\n                                        'Repository' as Service,\r\n                                        Level as Severity,\r\n                                        lower(Hostname) as Hostname\r\n  \t\t\t\t\t\t\t\t\t\t"
+        },
+        {
+            "qInfo": {
+                "qId": "042f7ccf-b028-4b10-91a0-957ba472685e",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ProdVer",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2.8.0+Build:2211.master"
+        },
+        {
+            "qInfo": {
+                "qId": "2add99ba-8d3d-4ef6-afa2-3168111545fb",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "node",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "ServerLogFolder"
+        },
+        {
+            "qInfo": {
+                "qId": "b52a38ef-8bd6-403f-bf68-a7c05ed509b8",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsEngineSession",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "\tProxySessionId&ProxyPackageId as _proxySessionPackage,\r\n                                         Selections as [Session Selections],\r\n                                         If(ProxySessionId='0',null(), round([CPU Spent (s)]*1000,0.01)) \t\tas [Session CPU Spent (ms)],\r\n                                         If(ProxySessionId='0',round([CPU Spent (s)]*1000,0.01)) \t\t\t\tas [Reload CPU Spent (ms)],\r\n                                         If(ProxySessionId='0',null(),ceil((\"Bytes Received\"+\"Bytes Sent\")/1024)) as [Session KBytes Sent+Received],\r\n                                         If(ProxySessionId='0',ceil((\"Bytes Received\"+\"Bytes Sent\")/1024)) \tas [Reload KBytes Sent+Received],\r\n                                         AppId as ObjectId\r\n  \t\t\t\t\t\t\t\t\t\t"
+        },
+        {
+            "qInfo": {
+                "qId": "0352c236-4fdc-4b0c-a09e-6f0ed3e9ece3",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsAuditActivityProxy",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "ProxySessionId&ProxyPackageId as _proxySessionPackage,\r\n  \t\t\t\t\t\t\t\t\t\tIf(Command='Close connection',1) as [Session Count],UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "0faf2026-17fc-4906-88ed-86e161a9295a",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "countOfPrints",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "28"
+        },
+        {
+            "qInfo": {
+                "qId": "b972c446-5114-47a8-b831-78c667a6fd80",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "countOfSessions",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "4"
+        },
+        {
+            "qInfo": {
+                "qId": "86ffd50d-4634-4c2a-9be8-97f7b2fceeac",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "logArea",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Trace"
+        },
+        {
+            "qInfo": {
+                "qId": "31722ae2-87d2-4b5e-805a-ae5faf6f88a8",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsAuditSecurityRepository",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "ProxySessionId&ProxyPackageId as _proxySessionPackage,SecurityClass, ClientHostAddress,'0.0000'& rowno() as Sequence#,applymap('qmc_change_map',subfield(Command,' ',1),null()) as qmc_change,IF(applymap('qmc_change_map',subfield(Command,' ',1),null())=1\r\n                                        \tand substringcount(Command,':')=0,\r\n        \t\t\t\t\t\t\t\t\tIF(left(UserId,3)<>'sa_' and UserId <> 'Not available' and UserId <> 'System',\r\n                                               upper(left(mid(Command,Index(Command,' ')+1),1))&mid(mid(Command,Index(Command,' ')+1),2) \r\n                                               \t)) as [QMC Resource Type],UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "556b7dd2-4294-4dc7-891a-6b017fd19be2",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsAuditSecurity",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "ProxySessionId&ProxyPackageId as _proxySessionPackage,SecurityClass, ClientHostAddress,UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "0edf9903-c270-41a2-a9e6-2d8e53226728",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsSystemService",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Severity,If(ProxyPackageId=0 AND ProxySessionId=0, Id, ProxySessionId&ProxyPackageId) as _proxySessionPackage,UserDirectory & chr(92) & UserId as UserId,\r\n  \t\t\t\t\t\t\t\t\t\tObjectId,ObjectName,\r\n                                        lower(Hostname) as Hostname,\r\n                                        Service,\r\n                                        ProxySessionId,ProxyPackageId,RequestSequenceId,\r\n  \t\t\t\t\t\t\t\t\t\tContext,Command,Result,Description,\r\n                                        if(ObjectName ='Not available',null(),\r\n                                        \tIF(Service='Scheduler',subfield(ObjectName,'|',2),\r\n                                            \tIF(Service='Printing' and Index(Command,'Export'),subfield(ObjectName,'|',-1),\r\n                                        \t\t\tIF(right(Command,3)='app' OR Context like '*/app/*',ObjectName))\r\n                                        \t)) AS [App Name],\r\n  \t\t\t\t\t\t\t\t\t\tProductVersion"
+        },
+        {
+            "qInfo": {
+                "qId": "c17b6a01-7d0e-455b-98af-781bef6a9fc9",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "fieldsEnginePerformance",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "ActiveDocSessions,ActiveDocs,ActiveUsers,CPULoad/100 as CPULoad,LoadedDocs,Selections,\r\n\t\t\t\t\t\t\t\t\t\tRound(\"VMCommitted(MB)\"/1024,0.01) as VMCommitted,\r\n                                        Round(\"VMAllocated(MB)\"/1024,0.01) as VMAllocated,\r\n    \t\t\t\t\t\t\t\t\tRound(\"VMFree(MB)\"/1024,0.01) as VMFree,\r\n                                        round(\"VMCommitted(MB)\"/(\"VMFree(MB)\"+\"VMCommitted(MB)\"),0.01) as VMPctCommitted,\r\n                                        Id as _proxySessionPackage,\r\n                                        'Engine' as Service,\r\n                                        Level as Severity,\r\n                                        CacheHits as [Cache Hits],CacheLookups as [Cache Lookups],CacheBytesAdded as [Cache Bytes Added],\r\n                                        lower(Hostname) as Hostname\r\n                                        "
+        },
+        {
+            "qInfo": {
+                "qId": "67ec16dd-0902-4acf-9151-7655ff47de82",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "reloadErrMsg",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": " Reload had 3 errors. Consult the Operations_Monitor_Reload_Stats.txt log for details."
+        },
+        {
+            "qInfo": {
+                "qId": "1d9d0a4e-e5cb-498c-924d-f2191da6ca22",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "reloadErr",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "3"
+        },
+        {
+            "qInfo": {
+                "qId": "9e692250-1923-4166-8744-c5277e571fc6",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "initialize",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "1"
+        },
+        {
+            "qInfo": {
+                "qId": "7f8d4a48-60c2-4f39-a6b4-4b0e33843ede",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "license_type_enabled",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            }
+        },
+        {
+            "qInfo": {
+                "qId": "a405bccc-3055-46e3-8f21-1ffdfe6b0c47",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "baseFileSize",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "79315",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "d17c1def-78bb-45a7-904c-180eab3056c7",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "maxTaskDepth",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "1",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "9fd492ff-5052-49b5-8ae1-44d836c016c7",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "rowstime_range_workingFinal",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "118",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "2a1fe9a3-e339-4a83-a44d-dd1dd77a2f6a",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "endpoint",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "monitor_apps_REST_task",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "ebe2a9af-397b-4566-ae69-c1e1e52ba1da",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "date_time_TableName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ServerLogFolder/governance_date_time_ops_7.10.0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "7b2f51cd-8ec0-4ffe-9f89-25f1d9b05c92",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "baseTableName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ServerLogFolder/governanceLogContent_7.10.0_db",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "bcedad9c-bf99-459f-80f5-bd363a7b3cb7",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "vLast4Hours",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "43293.462893519",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "13fbb15a-37b8-4033-b7b8-bae178f283f9",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NoOfRowstime_rangeBASE",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "855",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "fa72b2da-c02f-41c1-9e0f-2791534fde50",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NoOfRowsdate_timeBASE",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "737",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "21f2f14d-e319-4f8f-a8fc-546db0289aad",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "QRS_RowCounts",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "QRS Row Counts:  monitor_apps_REST_user = 0 lines, monitor_apps_REST_app = 0 lines, monitor_apps_REST_appobject = 0 lines, monitor_apps_REST_task = 0 lines,",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "162b3440-0456-4936-8482-32382b6c7763",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "monthsOfHistory",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "3",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "5b8afa5d-5586-4726-ad36-ea04f368ccf1",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "cutoffDate",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018-04-12",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "f0014313-1a3c-4a77-9fd3-66f27b0b2322",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "rose",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "bf8b01ec-96cf-4b16-a66b-16b9f2304144",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRowsQRS",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "18858fa3-f4f1-47f5-b3f6-3e80d1f53780",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "LastReloadTime",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018-07-12 14:06:34",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "1256b0ad-5759-4934-a078-2596e2685176",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "lastReloadCompare",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "43292.587893519",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "14c1f622-c56b-4b5d-ad05-8272345e49a3",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "serverLogFolder",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ServerLogFolder/",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "a0885b7d-bb07-4fbb-af97-7bc354fb2909",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "archivedLogsFolder",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ArchivedLogsFolder/",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "375348e1-d6f8-43d0-9d4e-1e0bba5b7d72",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "baseFileName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "governanceLogContent_7.10.0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "bb2c06a2-b9ca-47cb-96ac-d40cebac1278",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "serviceTableName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ServerLogFolder/governanceServiceLog_7.10.0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "63e8351f-245c-47a3-ab64-e1dc6725aa20",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "firstReload",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "be888cab-c033-456e-8a13-d87d36072cbb",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "storeTime",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018-07-12 15:06:39",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "54c1d1b6-83e0-4aa9-ba86-c8ce3aaf6331",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NoOfRowsLogContent",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "764",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "082cbc14-00b3-4cb3-8efe-b654532ca67b",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "countOfReloads",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "1",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "8c628e32-6dde-4bd8-af7a-1122797a28be",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "startdate",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "43294",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "85e3bd61-887f-4bc9-b879-52effe69ed22",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "hour_now",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "15",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "276e4e4d-29d1-4399-95b4-df83f8412ce7",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "c_red",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "RGB(204,102,119)",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "f8cdbbb7-1332-4a8b-8a69-905360673475",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "c_yellow",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "RGB(221,204,119)",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "7a3a5d13-409b-42b6-8088-ae916fd6760d",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "c_blue",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "RGB(68,119,170)",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "d4fd81b1-b252-486a-a070-62f1fa141ea8",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "c_gray",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "RGB(150,150,150)",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "c390ceef-85b6-41a6-8d5e-a054c08d443f",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ahora",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018-07-12 15:06:48",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "114d4fe1-3fce-40dc-9456-3424771db6b3",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "hst",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "discover",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "f818fab6-d1da-4e7d-8eb2-c6ac1dc44410",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ReloadDuration",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "00:00:14",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "27a0823d-a169-4f4a-9ef7-2711ecc9bed6",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ttlRows",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "3,767",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "0da0d557-cf5c-49c8-ac06-581999c87303",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NoOfRowsLogContentBASE",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "3654",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "25b555ba-2b9f-451e-a837-1612c10f91b5",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "rowsWorkingFinal",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "113",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "08e66bf1-fef5-462a-9cff-e63d6771f44e",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "rowsworkingFinal",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "113",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "6e541bdb-4ff1-4968-931e-701cd75d7fc9",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "storeBaseTableFail",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "a5c09423-40f3-4a35-930b-3d71b8f45cef",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NoOfRowsIncremental",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "-2890",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "50c6afab-6ba4-47e3-8611-c8339aa9f28f",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "enddate",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "43294",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "8dc8dad6-d382-4d3e-81a9-9a56f28df43f",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "maxLogTimeStamp",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018-07-12 15:05:01",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "11a163c7-1414-4172-8528-5b5a6a0d365e",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "maxLogTimeStamp_Hour",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "15",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "4a701f56-69e3-4f01-81ae-e16febc760a5",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "c_green",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "RGB(17,119,51)",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "62845fea-b555-446d-a571-ca381c54dc5f",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "c_lightred",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "RGB(240,209,214)",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "67a67f9c-c52c-4cc5-b892-c8176a10e1a6",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "c_lightblue",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "RGB(188,181,201)",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "b1e98eea-88d3-4f4d-81b1-c10448fa784e",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "PriorReloadDuration",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "00:00:17",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "af94fc96-67bd-4834-adc7-ebaa367ddfec",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "startMsg",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Reloading Operations Monitor 7.10.0 from DISCOVER running QIX Engine version 12.170.2. Default log source selected (will check database first, then files)",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "39219423-cf06-43cc-a90a-e8a81f5c6e45",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "reloadWarnMsg",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "There was a problem fetching data from QRS via the REST connector. We could connect, but failed to fetch data. QRS Row Counts:  monitor_apps_REST_user = 0 lines, monitor_apps_REST_app = 0 lines, monitor_apps_REST_appobject = 0 lines, monitor_apps_REST_task = 0 lines,",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "aa782c47-7b2c-443e-ba30-e3454fb96402",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "reloadWarn",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "1",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "0d655ecf-4fdf-437e-8bbc-90b28ef4a603",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "monitorAppStatsFile",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ServerLogFolder/Operations_Monitor_Reload_Stats_7.10.0.txt",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "58c85fec-1ba9-44cc-b5f3-df06f37e9412",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "countOfExports",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "e6ad644a-b1fc-4486-8760-ee501c748845",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "appMonitorStatsRowsInit",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "90",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "a5eadd31-5231-4409-bf25-e73e712b95ef",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "rowsdate_time_workingFinal",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "118",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "1ecca0e9-0214-4bfc-b795-3cf8d4823482",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "comp",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "DISCOVER",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "76858ac6-aa13-4dab-ab75-c633bd85f0a6",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "startMsg_1",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Reloading Operations Monitor 7.10.0 from DISCOVER running QIX Engine version 12.170.2",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "4a2b12db-2e1e-45fa-9080-c8870ea07fbd",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "time_range_FileName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "governance_time_range_ops_7.10.0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "45bde33c-04fa-493d-bf42-8b0824d17897",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "time_range_TableName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "lib://ServerLogFolder/governance_time_range_ops_7.10.0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "402f62c1-bf05-4824-85b9-f168c29487c4",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "date_time_FileName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "governance_date_time_ops_7.10.0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "7b66eced-7b19-4fdc-8b24-c39740f1605b",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "vLast24Hours",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "43292.629560185",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "a3fcd580-b5e3-4e07-9d90-4289034151e1",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "vLast72Hours",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "43290.629560185",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "38129eba-095d-46f3-a8d8-ad6bd3ca2978",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "db_check_time",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018-07-12 14:52:10",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "c772580f-46b5-44d9-85f9-1f22054c979c",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NoOfRows_db_check",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "21",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "dc411a6b-bee8-4f6d-99ba-c09febbba82e",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "new_date_time_links",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "3",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "998aea09-0e2f-405d-8876-997440ec06d0",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "db_v_file",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "487b0785-2d42-4c18-9c23-9b4f4a157940",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ts_field",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "\"_date_time_link_incr\"",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "08c1e651-4bfe-4c74-94cd-dba47cb951eb",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "serviceFileName",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "governanceServiceLog_7.10.0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "51fea070-b320-487a-aa0c-ca2468170b5e",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "msg",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Reloaded at 2018-07-12 15:06:48 on discover for 00:00:14 with 3,767 log entries from Log Database.There was a problem fetching data from QRS via the REST connector. We could connect, but failed to fetch data. QRS Row Counts:  monitor_apps_REST_user = 0 lines, monitor_apps_REST_app = 0 lines, monitor_apps_REST_appobject = 0 lines, monitor_apps_REST_task = 0 lines,",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "35b5657c-bb95-4a7a-be17-1967d6d1b164",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "LastSuccessfulReloadStartTime",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018-07-12 15:06:34",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "4bfd12e4-77e8-40c6-98a2-0bad95bc0c0e",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "CD",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "C:",
+            "qIsScriptCreated": true,
+            "qIsConfig": true
+        },
+        {
+            "qInfo": {
+                "qId": "795c2a38-1ee9-41f3-8f3c-184d2e4a2550",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "QvPath",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "C:\\Users\\twa\\AppData\\Local\\Programs\\Qlik\\Sense\\Engine",
+            "qIsScriptCreated": true,
+            "qIsConfig": true
+        },
+        {
+            "qInfo": {
+                "qId": "24729ea2-f264-4613-ae6a-32c3700669ff",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "QvRoot",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "C:",
+            "qIsScriptCreated": true,
+            "qIsConfig": true
+        },
+        {
+            "qInfo": {
+                "qId": "a1322484-b68d-4f6c-99fc-26f247313e95",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "QvWorkPath",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "C:/Users/twa/Documents/Qlik/Sense/Apps/DEV",
+            "qIsScriptCreated": true,
+            "qIsConfig": true
+        },
+        {
+            "qInfo": {
+                "qId": "af4ff8df-7e7f-4151-ad24-712f3ea92582",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "QvWorkRoot",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "C:",
+            "qIsScriptCreated": true,
+            "qIsConfig": true
+        },
+        {
+            "qInfo": {
+                "qId": "7bb8881d-114b-404d-9761-1bf287f9148c",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "WinPath",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "C:\\WINDOWS",
+            "qIsScriptCreated": true,
+            "qIsConfig": true
+        },
+        {
+            "qInfo": {
+                "qId": "a17466cc-a08a-41b9-b65b-3a492f683a27",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "WinRoot",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "C:",
+            "qIsScriptCreated": true,
+            "qIsConfig": true
+        },
+        {
+            "qInfo": {
+                "qId": "a827d007-2b16-453c-ba8b-0049efe890c0",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ErrorMode",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "1",
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "e2b75843-9136-47f4-bef5-15b7ce269e73",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "StripComments",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "1",
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "9bfe1787-eed8-4175-a8bb-35168645cd98",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "OpenUrlTimeout",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "86400",
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "7754d5cd-f8cb-4ba8-bf78-94ac07ac2ba3",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ScriptErrorCount",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "d8c7a552-6e0e-4ffb-a546-b87448344e8b",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ScriptErrorList",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "39878b3f-1e60-4b38-8206-84670c61f548",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ScriptError",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "d355f85b-3d89-4be1-9258-2cb5708b73de",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "HidePrefix",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "log",
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "d1d35d1a-6915-4eeb-a1e4-fbc1f363d802",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "TimeFormat",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "hh:mm:ss",
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "72829451-1c49-4d8f-9956-7037a2ff41ca",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "DateFormat",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "YYYY-MM-DD",
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "fcb2033c-dfe3-40f5-9933-0faddaec81e3",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "TimestampFormat",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "YYYY-MM-DD hh:mm:ss",
+            "qIsScriptCreated": true,
+            "qIsReserved": true
+        },
+        {
+            "qInfo": {
+                "qId": "43c0ba7e-5fd7-4d4f-8609-6b6cbebcbaad",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "app_version",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "7.10.0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "3ab554ac-046d-43ec-a5ec-b2b59790da2b",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "ReloadStartTime",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018-07-12 15:06:34",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "852a6ba5-106a-4800-8d92-7790769b60ce",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "db_v_file_override",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "1477b6bd-c383-484f-a614-f4f94fe87aa7",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "yr",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2018",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "549a6691-d0d4-4853-ad17-4896f3f8ce52",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "copyright",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Copyright 1993-2018 Qliktech International AB",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "1e6c9db8-7a6c-4180-8f8e-0d5a3ade7f53",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "skipped",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "e611e79f-6e6e-41e8-8712-558ec8bc4a8c",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "loaded",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "2f1e47f2-2135-48f1-a4c2-9f8014a01cb3",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "app_name",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Operations Monitor",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "225af481-9d28-4051-b46c-479da4e9c8ef",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "EngineVer",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "12.170.2",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "3e9912ea-6a59-4b6c-a507-9f3acf23cf50",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "session_count",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "67",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "078f0059-3887-47fc-9611-4d9fa26e3880",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "logSource",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "Log Database",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "57abbcb0-e7ed-485a-bacd-4a2f55e77e91",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "LastReloadSource",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "2",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "9213412d-a00b-4d70-b7fc-80f8c664bc1a",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRows_monitor_apps_REST_user",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "cdc8da27-d007-49d3-91bb-e10be5e99ba4",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRows_monitor_apps_REST_app",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "cff7a0dd-a162-48c6-b347-80f175842c07",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRows_monitor_apps_REST_appobject",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "dec16c25-fe7a-459c-bf59-26f97823a484",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "NumRows_monitor_apps_REST_task",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "0",
+            "qIsScriptCreated": true
+        },
+        {
+            "qInfo": {
+                "qId": "aa9d1f40-d403-4006-a44e-c0a45752c084",
+                "qType": "variable"
+            },
+            "qMetaDef": {},
+            "qName": "msg_qrs",
+            "qNumberPresentation": {
+                "qType": "U",
+                "qnDec": 10,
+                "qUseThou": 0
+            },
+            "qDefinition": "There was a problem fetching data from QRS via the REST connector. We could connect, but failed to fetch data. QRS Row Counts:  monitor_apps_REST_user = 0 lines, monitor_apps_REST_app = 0 lines, monitor_apps_REST_appobject = 0 lines, monitor_apps_REST_task = 0 lines,",
+            "qIsScriptCreated": true
+        }
+    ]
+}
